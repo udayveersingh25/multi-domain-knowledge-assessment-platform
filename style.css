@@ -1,0 +1,649 @@
+/* ====================================================
+   Author: Udayveer Singh
+   Project: Multi-Domain Knowledge Assessment Platform
+   Course: Web Dev II Final Project
+   Description: Custom CSS for quiz platform with light/dark themes,
+   responsive layout, and UI feedback states.
+   Note: Focused on readability over heavy animations.
+   ==================================================== */
+
+/* ====================================================
+   GLOBAL STYLES & CSS VARIABLES
+   ==================================================== */
+
+:root {
+    /* Primary color system - kept neutral for academic clarity */
+    /* Light Mode Colors */
+    --bg-primary: #f5f7fa;
+    --bg-secondary: #ffffff;
+    --bg-tertiary: #e8ecf1;
+    --text-primary: #2c3e50;
+    --text-secondary: #546e7a;
+    --accent-primary: #3498db;
+    --accent-secondary: #2980b9;
+    --success: #27ae60;
+    --error: #e74c3c;
+    --warning: #f39c12;
+    --border-color: #d1d8e0;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-hover: rgba(0, 0, 0, 0.15);
+}
+
+/* Dark Mode Variables */
+body.dark-mode {
+    --bg-primary: #1a1a2e;
+    --bg-secondary: #16213e;
+    --bg-tertiary: #0f3460;
+    --text-primary: #eaeaea;
+    --text-secondary: #b0b0b0;
+    --accent-primary: #3498db;
+    --accent-secondary: #5dade2;
+    --success: #2ecc71;
+    --error: #e74c3c;
+    --warning: #f39c12;
+    --border-color: #2d3561;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --shadow-hover: rgba(0, 0, 0, 0.4);
+}
+
+/* ====================================================
+   BASE STYLES
+   ==================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Base typography chosen for system compatibility and readability */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ====================================================
+   LAYOUT STRUCTURE
+   ==================================================== */
+
+.app-container {
+    /* Main wrapper to center content and maintain max readable width */
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    box-shadow: 0 4px 6px var(--shadow);
+    margin-bottom: 30px;
+}
+
+.app-header h1 {
+    font-size: 1.8rem;
+    color: var(--accent-primary);
+}
+
+.main-content {
+    flex: 1;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 4px 6px var(--shadow);
+    min-height: 500px;
+}
+
+.app-footer {
+    text-align: center;
+    padding: 20px;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 20px;
+}
+
+/* ====================================================
+   BUTTON STYLES
+   ==================================================== */
+
+.btn {
+    padding: 12px 28px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    background-color: var(--accent-primary);
+    color: white;
+    box-shadow: 0 2px 4px var(--shadow);
+}
+
+.btn:hover {
+    background-color: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px var(--shadow-hover);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn-secondary {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--border-color);
+}
+
+.btn-success {
+    background-color: var(--success);
+}
+
+.btn-success:hover {
+    background-color: #229954;
+}
+
+.btn-danger {
+    background-color: var(--error);
+}
+
+.btn-danger:hover {
+    background-color: #c0392b;
+}
+
+.btn-icon {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.btn-icon:hover {
+    background-color: var(--bg-tertiary);
+}
+
+/* ====================================================
+   SCREEN: TOPIC SELECTION
+   ==================================================== */
+
+.topic-selection {
+    text-align: center;
+}
+
+.topic-selection h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--text-primary);
+}
+
+.topic-selection p {
+    color: var(--text-secondary);
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.topic-card {
+    /* Interactive topic cards with subtle hover feedback */
+    padding: 30px;
+    background-color: var(--bg-tertiary);
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 3px solid transparent;
+}
+
+.topic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-hover);
+}
+
+.topic-card.selected {
+    border-color: var(--accent-primary);
+    background-color: var(--accent-primary);
+    color: white;
+}
+
+.topic-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.topic-card p {
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+.start-quiz-section {
+    margin-top: 30px;
+}
+
+.error-message {
+    color: var(--error);
+    margin-top: 15px;
+    font-weight: 600;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+/* ====================================================
+   SCREEN: QUIZ INTERFACE
+   ==================================================== */
+
+.quiz-interface {
+    /* Quiz screen layout using flex for predictable vertical flow */
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.quiz-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.quiz-info {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.topic-badge {
+    background-color: var(--accent-primary);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.progress-info {
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+.timer-display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.timer-display.warning {
+    color: var(--error);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.progress-bar-container {
+    width: 100%;
+    height: 8px;
+    background-color: var(--bg-tertiary);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+    transition: width 0.3s ease;
+    border-radius: 10px;
+}
+
+.question-container {
+    background-color: var(--bg-tertiary);
+    padding: 30px;
+    border-radius: 12px;
+    border-left: 5px solid var(--accent-primary);
+}
+
+.question-text {
+    font-size: 1.4rem;
+    font-weight: 600;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+.options-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.option-btn {
+    padding: 18px 24px;
+    font-size: 1.05rem;
+    text-align: left;
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.option-btn:hover:not(:disabled) {
+    background-color: var(--bg-primary);
+    border-color: var(--accent-primary);
+    transform: translateX(5px);
+}
+
+.option-btn.selected {
+    background-color: var(--accent-primary);
+    color: white;
+    border-color: var(--accent-primary);
+}
+
+.option-btn.correct {
+    background-color: var(--success);
+    color: white;
+    border-color: var(--success);
+}
+
+.option-btn.incorrect {
+    background-color: var(--error);
+    color: white;
+    border-color: var(--error);
+}
+
+.option-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.quiz-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+/* ====================================================
+   SCREEN: RESULTS
+   ==================================================== */
+
+.results-screen {
+    text-align: center;
+}
+
+.results-header {
+    margin-bottom: 40px;
+}
+
+.results-header h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: var(--accent-primary);
+}
+
+.score-display {
+    font-size: 4rem;
+    font-weight: 700;
+    margin: 30px 0;
+    color: var(--success);
+}
+
+.score-display.low {
+    color: var(--error);
+}
+
+.score-display.medium {
+    color: var(--warning);
+}
+
+.results-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.stat-card {
+    padding: 25px;
+    background-color: var(--bg-tertiary);
+    border-radius: 12px;
+}
+
+.stat-card h3 {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.stat-card p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.results-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* ====================================================
+   LEADERBOARD
+   ==================================================== */
+
+.leaderboard-section {
+    /* Leaderboard section styled to resemble a simple dashboard table */
+    margin-top: 50px;
+    padding-top: 50px;
+    border-top: 2px solid var(--border-color);
+}
+
+.leaderboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.leaderboard-header h3 {
+    font-size: 1.8rem;
+    color: var(--text-primary);
+}
+
+.leaderboard-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--bg-secondary);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.leaderboard-table thead {
+    background-color: var(--bg-tertiary);
+}
+
+.leaderboard-table th,
+.leaderboard-table td {
+    padding: 15px;
+    text-align: left;
+}
+
+.leaderboard-table th {
+    font-weight: 700;
+    color: var(--text-primary);
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.leaderboard-table tbody tr {
+    border-bottom: 1px solid var(--border-color);
+    transition: background-color 0.2s ease;
+}
+
+.leaderboard-table tbody tr:hover {
+    background-color: var(--bg-tertiary);
+}
+
+.leaderboard-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.empty-leaderboard {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-secondary);
+    font-style: italic;
+}
+
+/* ====================================================
+   TOAST NOTIFICATIONS
+   ==================================================== */
+
+.toast-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toast {
+    padding: 15px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 12px var(--shadow);
+    animation: slideIn 0.3s ease;
+    min-width: 250px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.toast.success {
+    background-color: var(--success);
+}
+
+.toast.error {
+    background-color: var(--error);
+}
+
+.toast.warning {
+    background-color: var(--warning);
+}
+
+/* ====================================================
+   RESPONSIVE DESIGN
+   ==================================================== */
+
+@media (max-width: 768px) {
+    .app-header h1 {
+        font-size: 1.3rem;
+    }
+
+    .main-content {
+        padding: 25px;
+    }
+
+    .topic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quiz-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .results-actions {
+        flex-direction: column;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .leaderboard-table {
+        font-size: 0.9rem;
+    }
+
+    .leaderboard-table th,
+    .leaderboard-table td {
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        padding: 10px;
+    }
+
+    .app-header {
+        padding: 15px;
+    }
+
+    .main-content {
+        padding: 20px;
+    }
+
+    .score-display {
+        font-size: 3rem;
+    }
+
+    .question-text {
+        font-size: 1.2rem;
+    }
+}
+
+/* ====================================================
+   Notes:
+   - Dark mode uses CSS variables toggled via JS class.
+   - Avoided external CSS frameworks to demonstrate core CSS skills.
+   - Minor transitions added for UX clarity, not visual flair.
+   ==================================================== */

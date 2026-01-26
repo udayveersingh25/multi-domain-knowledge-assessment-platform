@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multi-Domain Knowledge Assessment Platform</title>
+    <meta name="description" content="A multi-domain quiz platform built with Vanilla JavaScript to demonstrate DOM manipulation, state management, and browser APIs.">
+    <meta name="author" content="Udayveer Singh">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Main Application Container -->
+    <!--
+      Project: Multi-Domain Knowledge Assessment Platform
+      Built for Web Dev II Final Project
+      Focus: DOM manipulation, event-driven programming, and client-side state management
+    -->
+    <div class="app-container">
+        <!-- Header with Dark Mode Toggle -->
+        <header class="app-header">
+            <h1>Knowledge Assessment Platform</h1>
+            <button id="darkModeToggle" class="btn-icon" aria-label="Toggle Dark Mode">
+                <span class="icon">🌙</span>
+            </button>
+        </header>
+
+        <!-- Main Content Area - Screens will be dynamically rendered here -->
+        <main id="mainContent" class="main-content">
+            <noscript>
+                <p style="padding:10px;color:red;font-weight:bold;">
+                    This application requires JavaScript to run. Please enable JavaScript in your browser.
+                </p>
+            </noscript>
+            <!-- Dynamic content will be injected via JavaScript -->
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>&copy; 2026 Udayveer Singh — Multi-Domain Knowledge Assessment Platform</p>
+            <p>Built with Vanilla JavaScript, HTML5, and CSS3. No frameworks used.</p>
+            <p>Keyboard shortcut: Press 1-4 to select answers during the quiz.</p>
+        </footer>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toastContainer" class="toast-container"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
