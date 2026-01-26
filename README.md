@@ -1,2 +1,61 @@
-# multi-domain-knowledge-assessment-platform
-A multi-domain knowledge assessment platform built using Vanilla JavaScript, HTML, and CSS. The project demonstrates dynamic DOM manipulation, client-side state management, event-driven programming, and LocalStorage persistence. It features timed quizzes, leaderboard analytics, keyboard accessibility, and dark mode support.
+# Multi-Domain Knowledge Assessment Platform
+
+## Project Description
+The **Multi-Domain Knowledge Assessment Platform** is a client-side quiz application built using **Vanilla JavaScript, HTML, and CSS**. The project demonstrates dynamic DOM manipulation, event-driven programming, client-side state management, and browser-based persistence using LocalStorage. Users can take timed quizzes across multiple topics, view real-time results, and track performance using a persistent leaderboard.
+
+---
+
+## Problem Statement
+Students and learners often lack a simple interactive platform to assess their knowledge across different domains. Existing platforms are either complex or require backend infrastructure. This project provides a lightweight, browser-based solution for knowledge assessment with real-time feedback and performance tracking, implemented entirely on the client side.
+
+---
+
+## Features Implemented
+- Multi-topic quiz system (Science, Technology, Movies)
+- Timed quiz with automatic question progression
+- Real-time scoring and result analysis
+- Leaderboard with LocalStorage persistence
+- Leaderboard ranking based on highest score and percentage
+- Leaderboard preview on the home screen
+- Dark mode toggle with saved preference
+- Keyboard shortcuts (1–4 keys to select answers)
+- Toast notifications for user feedback
+- Edge case handling (no topic selected, time expiry, duplicate answers, empty leaderboard)
+- Responsive and clean UI using Flexbox/Grid
+
+---
+
+## DOM Concepts Used
+- Dynamic element creation using `document.createElement()`
+- Dynamic content rendering and screen switching using JavaScript
+- Event-driven DOM updates (click, keyboard, timer events)
+- Event delegation for answer option handling
+- Conditional rendering based on application state
+- CSS class manipulation for UI feedback (correct/incorrect answers, dark mode)
+- Inline style updates (progress bar, timer warning states)
+
+---
+
+## Steps to Run the Project
+1. Clone or download the repository.
+2. Open the project folder.
+3. Open `index.html` in any modern web browser (Chrome, Edge, Firefox).
+4. Select a topic and start the quiz.
+5. View results and leaderboard after completing the quiz.
+
+No additional dependencies or build tools are required.
+
+---
+
+## Known Limitations
+- The project is fully client-side and does not use a backend database.
+- Leaderboard data is stored only in browser LocalStorage and will reset if browser storage is cleared.
+- Questions are static and predefined in the JavaScript file.
+- No user authentication or multi-user support is implemented.
+
+---
+
+## Author
+**Udayveer Singh**  
+Web Dev II Final Project
+```
