@@ -1,4 +1,3 @@
-```md
 # Multi-Domain Knowledge Assessment Platform
 
 ## Project Description
@@ -65,10 +64,7 @@ No additional dependencies or build tools are required.
 ![Leaderboard Screen](./screenshots/leaderboard-screen.png)
 
 
-**How to add screenshots:**
-1. Create a folder named `screenshots` in the repository root.
-2. Take screenshots of your app while running in the browser.
-3. Save them as `home-screen.png`, `quiz-screen.png`, and `results-screen.png` (or update the file names above).
+
 
 ---
 
