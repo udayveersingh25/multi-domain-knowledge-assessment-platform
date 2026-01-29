@@ -1,3 +1,4 @@
+```md
 # Multi-Domain Knowledge Assessment Platform
 
 ## Project Description
@@ -44,6 +45,30 @@ Students and learners often lack a simple interactive platform to assess their k
 5. View results and leaderboard after completing the quiz.
 
 No additional dependencies or build tools are required.
+
+---
+
+## Screenshots
+
+> Add screenshots of your application here to demonstrate the UI and features.
+
+### Home Screen (Topic Selection & Leaderboard Preview)
+![Home Screen](./screenshots/home-screen.png)
+
+### Quiz Interface (Question, Timer, Progress Bar)
+![Quiz Screen](./screenshots/quiz-screen.png)
+
+### Results Screen
+![Results Screen](./screenshots/results-screen.png)
+
+### Leaderboard Screen
+![Leaderboard Screen](./screenshots/leaderboard-screen.png)
+
+
+**How to add screenshots:**
+1. Create a folder named `screenshots` in the repository root.
+2. Take screenshots of your app while running in the browser.
+3. Save them as `home-screen.png`, `quiz-screen.png`, and `results-screen.png` (or update the file names above).
 
 ---
 
